@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  WeSplit
-//
-//  Created by Marcos Barbosa on 16/10/23.
-//
 
 import SwiftUI
 
@@ -16,25 +10,36 @@ struct ContentView: View {
 
     
     let tipPercentages: Array<Int> = [10,15,20,25,0]
-        var body: some View {
-            NavigationStack{
-                Form {
-                    Section {
-                        TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                            .keyboardType(.decimalPad)
-                        Picker("Number of people", selection: $numberOfPeople) {
-                            ForEach(2..<100){
-                                Text("\($0) people")
-                            }
+    var body: some View {
+        NavigationStack{
+            Form {
+                Section {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .keyboardType(.decimalPad)
+                    
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2..<100){
+                            Text("\($0) people")
                         }
-                        .pickerStyle(.navigationLink)
-                    }
-                    Section {
-                        Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     }
                 }
-                .navigationTitle("WeSplit")
+                
+                Section("How much tip do you want to leave?"){
+                    
+                    Picker("Tip percentage", selection: $tipPercentage){
+                        ForEach(tipPercentages, id: \.self){
+                            Text(($0), format: .percent)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
+                Section {
+                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                }
             }
+            .navigationTitle("WeSplit")
+        }
     }
 }
     
@@ -45,6 +50,3 @@ struct ContentView: View {
             
         }
     }
-    
-
-
