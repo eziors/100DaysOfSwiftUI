@@ -9,9 +9,12 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     
     @State private var showingScore = false
+    @State private var showingRestart = false
     @State private var scoreTitle = ""
     
-    @State var score = 0
+    @State private var questionsCount = 0
+    
+    @State private var score = 0
     
     var body: some View {
         
@@ -27,7 +30,7 @@ struct ContentView: View {
             VStack{
                 
                 Spacer()
-                Text("Gless the flag")
+                Text("Guess the flag")
                     .font(.largeTitle.bold())
                     .foregroundStyle(.white)
                 
@@ -43,7 +46,13 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button(action: {
-                            flagTapped(number)
+                            
+                            if questionsCount < 8 {
+                                flagTapped(number)
+                            } else {
+                                showingRestart = true
+                            }
+                            
                         }) {
                             Image(countries[number])
                                 .clipShape(Capsule())
@@ -62,6 +71,9 @@ struct ContentView: View {
                 Text("Score: \(score)")
                     .foregroundStyle(.white)
                     .font(.title.bold())
+                Text("Tries: \(questionsCount)/8")
+                    .foregroundStyle(.white)
+                    .font(.subheadline.weight(.semibold))
                 
                 Spacer()
             }
@@ -75,16 +87,24 @@ struct ContentView: View {
         } message: {
             Text("Score: \(score)")
         }
+        
+        .alert("Click continue to restart the game", isPresented: $showingRestart) {
+            Button("Continue") {
+                questionsCount = 0
+                score = 0
+                askQuestion()
+            }
+        }
     }
     
      func flagTapped(_ number: Int) {
         if correctAnswer == number {
             scoreTitle = "Correct"
             score += 1
-            
-            
+            questionsCount += 1
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong! That’s the flag of \(countries[correctAnswer])"
+            questionsCount += 1
         }
         showingScore = true
     }
