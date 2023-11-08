@@ -49,7 +49,7 @@ struct ContentView: View {
                 
                 VStack(alignment: .leading, spacing: 0){
                     
-                    Text("Daily coffes intake")
+                    Text("Daily coffees intake")
                         .font(.headline)
                     Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
                     
