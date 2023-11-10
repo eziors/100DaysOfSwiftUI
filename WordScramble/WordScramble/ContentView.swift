@@ -15,6 +15,8 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    
+    @State private var playerScore = 0
 
     var body: some View {
         
@@ -34,6 +36,16 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Player Score") {
+                    
+                    HStack(){
+                        Text(playerScore, format: .number)
+                        Spacer()
+                        Button("Reset score", action: resetScore)
+                            
+                    }
+                }
             }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
@@ -42,6 +54,10 @@ struct ContentView: View {
             .alert(errorTitle, isPresented: $showingError) { } message: {
                 Text(errorMessage)
             }
+            
+            .toolbar {
+                Button("Another word", action: startGame)
+            }
         }
     }
     
@@ -49,6 +65,11 @@ struct ContentView: View {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard answer.count > 0 else { return }
+        
+        guard isNotStartWord(word: answer) else {
+            wordError(title: "Word is the example word", message: "You're cheating !")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
@@ -64,6 +85,8 @@ struct ContentView: View {
             wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
             return
         }
+        
+        playerScore += answer.count
         
         withAnimation {
             usedWords.insert(answer, at: 0 )
@@ -82,11 +105,23 @@ struct ContentView: View {
                 
                 rootWord = allWords.randomElement() ?? "silkworm"
                 
+                if usedWords.count > 0 {
+                    usedWords.removeAll()
+                }
+                
                 return
             }
         }
         
         fatalError("Could not load start.txt from bundle.")
+    }
+    
+    func isNotStartWord(word: String) -> Bool {
+        if word == rootWord {
+            return false
+        } else {
+            return true
+        }
     }
     
     func isOriginal(word: String) -> Bool {
@@ -118,6 +153,10 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func resetScore(){
+        playerScore = 0
     }
 }
 
