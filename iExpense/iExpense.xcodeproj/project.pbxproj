@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D2F4DA32B06DD7300013A7F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F4DA22B06DD7300013A7F /* AddView.swift */; };
 		8DB761FE2B02B82C00E58F4F /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB761FD2B02B82C00E58F4F /* iExpenseApp.swift */; };
 		8DB762002B02B82C00E58F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB761FF2B02B82C00E58F4F /* ContentView.swift */; };
 		8DB762022B02B82E00E58F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB762012B02B82E00E58F4F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D2F4DA22B06DD7300013A7F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		8DB761FA2B02B82C00E58F4F /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB761FD2B02B82C00E58F4F /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		8DB761FF2B02B82C00E58F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				8DB761FD2B02B82C00E58F4F /* iExpenseApp.swift */,
 				8DB761FF2B02B82C00E58F4F /* ContentView.swift */,
+				8D2F4DA22B06DD7300013A7F /* AddView.swift */,
 				8DB762012B02B82E00E58F4F /* Assets.xcassets */,
 				8DB762032B02B82E00E58F4F /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				8DB762002B02B82C00E58F4F /* ContentView.swift in Sources */,
 				8DB761FE2B02B82C00E58F4F /* iExpenseApp.swift in Sources */,
+				8D2F4DA32B06DD7300013A7F /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
