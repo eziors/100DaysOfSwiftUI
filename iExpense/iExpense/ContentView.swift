@@ -13,51 +13,90 @@ struct ExpenseItem: Identifiable, Codable{
     let name: String
     let type: String
     let amount: Double
+    let currency: String
 }
 
 @Observable
 class Expenses {
-    var items = [ExpenseItem]() {
-        didSet {
-            if let encoded = try? JSONEncoder().encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "Items")
-            }
+    
+    var personalItems = [ExpenseItem]() {
+        didSet{
+            saveToUserDefaults(items: personalItems, key: "personalKey")
         }
     }
     
-    init() {
-        if let savedItems = UserDefaults.standard.data(forKey: "Items") {
+    var businessItems = [ExpenseItem]() {
+        didSet {
+            saveToUserDefaults(items: businessItems, key: "businessKey")
+        }
+    }
+   
+    private func saveToUserDefaults(items: [ExpenseItem], key: String) {
+        if let encodedItems = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedItems, forKey: key)
+        }
+    }
+    
+    init(){
+        decodeFromUserDefaults(key: "personalKey", into: &personalItems)
+        decodeFromUserDefaults(key: "businessKey", into: &businessItems)
+    }
+    
+    private func decodeFromUserDefaults(key: String, into items: inout [ExpenseItem]) {
+        if let savedItems = UserDefaults.standard.data(forKey: key) {
             if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
                 items = decodedItems
-                return
             }
         }
-        items = []
     }
+   
 }
 
 struct ContentView: View {
     
     @State private var expenses = Expenses()
     @State private var showingAddExpense = false
+    @State private var colors = [""]
     
     var body: some View {
         
         NavigationStack{
             List{
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+                Section("Personal"){
+                    ForEach(expenses.personalItems) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            
+                            Spacer()
+                            Text(item.amount, format: .currency(code: item.currency))
+                                .foregroundStyle(getColor(amount: item.amount))
+                            
                         }
-
-                        Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
                     }
+                    .onDelete(perform: removePersonal)
                 }
-                .onDelete(perform: removeItems)
+                
+                Section("Business"){
+                    ForEach(expenses.businessItems) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            
+                            Spacer()
+                            Text(item.amount, format: .currency(code: item.currency))
+                                .foregroundStyle(getColor(amount: item.amount))
+                            
+                        }
+                    }
+                    .onDelete(perform: removeBusiness)
+                }
             }
             .navigationTitle("iExpense")
             .toolbar{
@@ -70,8 +109,21 @@ struct ContentView: View {
             }
         }
     }
-    func removeItems(at offsets: IndexSet){
-        expenses.items.remove(atOffsets: offsets)
+    func removePersonal(at offsets: IndexSet){
+        expenses.personalItems.remove(atOffsets: offsets)
+    }
+    func removeBusiness(at offsets: IndexSet){
+        expenses.businessItems.remove(atOffsets: offsets)
+    }
+    
+    func getColor(amount: Double) -> Color {
+        if amount <= 35 {
+            return .green
+        } else if amount <= 100.0 {
+            return .orange
+        } else  {
+            return .red
+        }
     }
 }
 
