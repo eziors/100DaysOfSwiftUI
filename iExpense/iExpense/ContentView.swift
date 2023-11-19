@@ -77,7 +77,9 @@ struct ContentView: View {
                             
                         }
                     }
-                    .onDelete(perform: removePersonal)
+                    .onDelete { indexSet in
+                            removeExpense(at: indexSet, from: "Personal")
+                        }
                 }
                 
                 Section("Business"){
@@ -95,7 +97,9 @@ struct ContentView: View {
                             
                         }
                     }
-                    .onDelete(perform: removeBusiness)
+                    .onDelete { indexSet in
+                            removeExpense(at: indexSet, from: "Business")
+                        }
                 }
             }
             .navigationTitle("iExpense")
@@ -109,12 +113,17 @@ struct ContentView: View {
             }
         }
     }
-    func removePersonal(at offsets: IndexSet){
-        expenses.personalItems.remove(atOffsets: offsets)
+    func removeExpense(at offsets: IndexSet, from expense: String){
+        switch expense {
+        case "Personal":
+            expenses.personalItems.remove(atOffsets: offsets)
+        case "Business":
+            expenses.businessItems.remove(atOffsets: offsets)
+        default:
+            break
+        }
     }
-    func removeBusiness(at offsets: IndexSet){
-        expenses.businessItems.remove(atOffsets: offsets)
-    }
+    
     
     func getColor(amount: Double) -> Color {
         if amount <= 35 {
