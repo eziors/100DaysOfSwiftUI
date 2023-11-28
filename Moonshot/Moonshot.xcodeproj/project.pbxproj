@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0D4F0B2B16236900D22871 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D4F0A2B16236900D22871 /* Color-Theme.swift */; };
 		8D46DA4F2B0DA2ED00A7A998 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D46DA4D2B0DA2EC00A7A998 /* astronauts.json */; };
 		8D46DA502B0DA2ED00A7A998 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D46DA4E2B0DA2ED00A7A998 /* missions.json */; };
 		8D46DB022B0DA80B00A7A998 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D46DB012B0DA80B00A7A998 /* Astronaut.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D0D4F0A2B16236900D22871 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		8D46DA4D2B0DA2EC00A7A998 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		8D46DA4E2B0DA2ED00A7A998 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		8D46DB012B0DA80B00A7A998 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8D46DB032B0DA90900A7A998 /* Bundle-Decodable.swift */,
 				8D5773802B157E23004AA90F /* Mission.swift */,
 				8D47D8BC2B0C22BA00B60D24 /* ContentView.swift */,
+				8D0D4F0A2B16236900D22871 /* Color-Theme.swift */,
 				8D47D8BE2B0C22BC00B60D24 /* Assets.xcassets */,
 				8D47D8C02B0C22BC00B60D24 /* Preview Content */,
 			);
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D46DB022B0DA80B00A7A998 /* Astronaut.swift in Sources */,
+				8D0D4F0B2B16236900D22871 /* Color-Theme.swift in Sources */,
 				8D47D8BD2B0C22BA00B60D24 /* ContentView.swift in Sources */,
 				8D47D8BB2B0C22BA00B60D24 /* MoonshotApp.swift in Sources */,
 				8D5773812B157E23004AA90F /* Mission.swift in Sources */,
