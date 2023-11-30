@@ -42,7 +42,6 @@ For more detailed information, you can explore the course content here:[100 Days
 [Project - Moonshot](https://github.com/eziors/100DaysOfSwiftUI/tree/main/Moonshot)
 
 
-
 ---
 
-**Divirta-se codificando!** 🚀
+**Have fun coding !** 🚀
