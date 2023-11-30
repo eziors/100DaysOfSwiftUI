@@ -1,5 +1,5 @@
 # 100 Days of SwiftUI
-Developed by Paul Hudson, this free course is designed with the primary idea of teaching you the basics of SwiftUI and iOS Development, followed by a challenge of 100 days straight.
+Developed by Paul Hudson, this free course is designed with the primary idea of teaching the basics of SwiftUI and iOS Development, followed by a challenge of 100 days straight.
 
 For more detailed information, you can explore the course content here:[100 Days of SwiftUI](https://www.hackingwithswift.com/100/swiftui)
 
