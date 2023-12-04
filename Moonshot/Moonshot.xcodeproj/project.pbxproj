@@ -18,6 +18,7 @@
 		8D47D8C22B0C22BC00B60D24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D47D8C12B0C22BC00B60D24 /* Preview Assets.xcassets */; };
 		8D5773812B157E23004AA90F /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5773802B157E23004AA90F /* Mission.swift */; };
 		8DDB812B2B168BF600899B80 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB812A2B168BF600899B80 /* MissionView.swift */; };
+		8DE6CADE2B1E688C00904173 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6CADD2B1E688C00904173 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8D47D8C12B0C22BC00B60D24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D5773802B157E23004AA90F /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		8DDB812A2B168BF600899B80 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		8DE6CADD2B1E688C00904173 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				8D46DB032B0DA90900A7A998 /* Bundle-Decodable.swift */,
 				8D5773802B157E23004AA90F /* Mission.swift */,
 				8D47D8BC2B0C22BA00B60D24 /* ContentView.swift */,
+				8DE6CADD2B1E688C00904173 /* AstronautView.swift */,
 				8D0D4F0A2B16236900D22871 /* Color-Theme.swift */,
 				8DDB812A2B168BF600899B80 /* MissionView.swift */,
 				8D47D8BE2B0C22BC00B60D24 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			files = (
 				8DDB812B2B168BF600899B80 /* MissionView.swift in Sources */,
 				8D46DB022B0DA80B00A7A998 /* Astronaut.swift in Sources */,
+				8DE6CADE2B1E688C00904173 /* AstronautView.swift in Sources */,
 				8D0D4F0B2B16236900D22871 /* Color-Theme.swift in Sources */,
 				8D47D8BD2B0C22BA00B60D24 /* ContentView.swift in Sources */,
 				8D47D8BB2B0C22BA00B60D24 /* MoonshotApp.swift in Sources */,
