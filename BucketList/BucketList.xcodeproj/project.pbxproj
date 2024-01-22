@@ -12,6 +12,7 @@
 		8DA32AAE2B58CED800324B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA32AAD2B58CED800324B7D /* Assets.xcassets */; };
 		8DA32AB12B58CED800324B7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA32AB02B58CED800324B7D /* Preview Assets.xcassets */; };
 		8DA833812B5B002C0016B575 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA833802B5B002C0016B575 /* EditView.swift */; };
+		8DAD8A2A2B5E2C2E00FF08B8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD8A292B5E2C2E00FF08B8 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		8DA32AAD2B58CED800324B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DA32AB02B58CED800324B7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DA833802B5B002C0016B575 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		8DAD8A292B5E2C2E00FF08B8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				8DA32AA92B58CED500324B7D /* BucketListApp.swift */,
 				8DA32AAB2B58CED500324B7D /* ContentView.swift */,
 				8DA833802B5B002C0016B575 /* EditView.swift */,
+				8DAD8A292B5E2C2E00FF08B8 /* Result.swift */,
 				8DA32AAD2B58CED800324B7D /* Assets.xcassets */,
 				8DA32AAF2B58CED800324B7D /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				8DA32AAC2B58CED500324B7D /* ContentView.swift in Sources */,
 				8DA32AAA2B58CED500324B7D /* BucketListApp.swift in Sources */,
+				8DAD8A2A2B5E2C2E00FF08B8 /* Result.swift in Sources */,
 				8DA833812B5B002C0016B575 /* EditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
