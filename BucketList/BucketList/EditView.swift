@@ -29,8 +29,7 @@ struct EditView: View {
                     TextField("Place name", text: $name)
                     TextField("Description", text: $description)
                 }
-                
-                Section("Nearby…") {
+                Section("Nearby") {
                     switch loadingState {
                     case .loaded:
                         ForEach(pages, id: \.pageid) { page in
@@ -41,9 +40,9 @@ struct EditView: View {
                                 .italic()
                         }
                     case .loading:
-                        Text("Loading…")
+                        Text("Loading")
                     case .failed:
-                        Text("Please try again later.")
+                        Text("Please try again later")
                     }
                 }
             }
@@ -81,15 +80,12 @@ struct EditView: View {
 
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-
-            // we got some data back!
+            
             let items = try JSONDecoder().decode(Result.self, from: data)
-
-            // success – convert the array values to our pages array
+            
             pages = items.query.pages.values.sorted { $0.title < $1.title }
             loadingState = .loaded
         } catch {
-            // if we're still here it means the request failed somehow
             loadingState = .failed
         }
     }
