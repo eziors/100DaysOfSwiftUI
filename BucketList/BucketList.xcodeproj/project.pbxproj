@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D9900482B61F7A900DF53B0 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9900472B61F7A900DF53B0 /* ContentView-ViewModel.swift */; };
+		8D99004A2B61F84100DF53B0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9900492B61F84100DF53B0 /* Location.swift */; };
 		8DA32AAA2B58CED500324B7D /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA32AA92B58CED500324B7D /* BucketListApp.swift */; };
 		8DA32AAC2B58CED500324B7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA32AAB2B58CED500324B7D /* ContentView.swift */; };
 		8DA32AAE2B58CED800324B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA32AAD2B58CED800324B7D /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D9900472B61F7A900DF53B0 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		8D9900492B61F84100DF53B0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8DA32AA62B58CED500324B7D /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA32AA92B58CED500324B7D /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		8DA32AAB2B58CED500324B7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				8DA32AA92B58CED500324B7D /* BucketListApp.swift */,
+				8D9900492B61F84100DF53B0 /* Location.swift */,
 				8DA32AAB2B58CED500324B7D /* ContentView.swift */,
+				8D9900472B61F7A900DF53B0 /* ContentView-ViewModel.swift */,
 				8DA833802B5B002C0016B575 /* EditView.swift */,
 				8DAD8A292B5E2C2E00FF08B8 /* Result.swift */,
 				8DA32AAD2B58CED800324B7D /* Assets.xcassets */,
@@ -145,7 +151,9 @@
 			files = (
 				8DA32AAC2B58CED500324B7D /* ContentView.swift in Sources */,
 				8DA32AAA2B58CED500324B7D /* BucketListApp.swift in Sources */,
+				8D9900482B61F7A900DF53B0 /* ContentView-ViewModel.swift in Sources */,
 				8DAD8A2A2B5E2C2E00FF08B8 /* Result.swift in Sources */,
+				8D99004A2B61F84100DF53B0 /* Location.swift in Sources */,
 				8DA833812B5B002C0016B575 /* EditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
